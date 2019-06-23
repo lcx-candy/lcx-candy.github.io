@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>雒晓晓</title>
+  <title>雒晓晓Blog</title>
   
-  <subtitle>学习之路</subtitle>
+  <subtitle>得意淡然，失意坦然；喜而不狂，忧而不伤。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
