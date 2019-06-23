@@ -82,17 +82,17 @@
 
 
 
-<meta name="description" content="##一、同源政策（跨域资源共享）   浏览器同源政策及其规避方法阮一峰#####1.1 含义所谓同源就是指协议相同、域名相同、端口相同。#####1.2 目的为了保证用户信息学的安全，防止恶意的网站窃取数据。#####1.3 CORS 跨域资源共享CORS详解阮一峰 主要是绕开浏览器的同源策略   自己写的中间件： 123456789101112131415# 允许跨域的中间件,get_resp是">
+<meta name="description" content="一、同源政策（跨域资源共享）   浏览器同源政策及其规避方法阮一峰  1.1 含义所谓同源就是指协议相同、域名相同、端口相同。1.2 目的为了保证用户信息学的安全，防止恶意的网站窃取数据。1.3 CORS  跨域资源共享CORS详解阮一峰 主要是绕开浏览器的同源策略   自己写的中间件： 123456789101112131415# 允许跨域的中间件,get_resp是视图函数   def all">
 <meta property="og:type" content="article">
 <meta property="og:title" content="同源政策、RESTful架构、DRF框架">
 <meta property="og:url" content="http://yoursite.com/2019/06/23/cors-restful-drf/index.html">
 <meta property="og:site_name" content="雒晓晓">
-<meta property="og:description" content="##一、同源政策（跨域资源共享）   浏览器同源政策及其规避方法阮一峰#####1.1 含义所谓同源就是指协议相同、域名相同、端口相同。#####1.2 目的为了保证用户信息学的安全，防止恶意的网站窃取数据。#####1.3 CORS 跨域资源共享CORS详解阮一峰 主要是绕开浏览器的同源策略   自己写的中间件： 123456789101112131415# 允许跨域的中间件,get_resp是">
+<meta property="og:description" content="一、同源政策（跨域资源共享）   浏览器同源政策及其规避方法阮一峰  1.1 含义所谓同源就是指协议相同、域名相同、端口相同。1.2 目的为了保证用户信息学的安全，防止恶意的网站窃取数据。1.3 CORS  跨域资源共享CORS详解阮一峰 主要是绕开浏览器的同源策略   自己写的中间件： 123456789101112131415# 允许跨域的中间件,get_resp是视图函数   def all">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-23T13:02:27.470Z">
+<meta property="og:updated_time" content="2019-06-23T13:08:51.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="同源政策、RESTful架构、DRF框架">
-<meta name="twitter:description" content="##一、同源政策（跨域资源共享）   浏览器同源政策及其规避方法阮一峰#####1.1 含义所谓同源就是指协议相同、域名相同、端口相同。#####1.2 目的为了保证用户信息学的安全，防止恶意的网站窃取数据。#####1.3 CORS 跨域资源共享CORS详解阮一峰 主要是绕开浏览器的同源策略   自己写的中间件： 123456789101112131415# 允许跨域的中间件,get_resp是">
+<meta name="twitter:description" content="一、同源政策（跨域资源共享）   浏览器同源政策及其规避方法阮一峰  1.1 含义所谓同源就是指协议相同、域名相同、端口相同。1.2 目的为了保证用户信息学的安全，防止恶意的网站窃取数据。1.3 CORS  跨域资源共享CORS详解阮一峰 主要是绕开浏览器的同源策略   自己写的中间件： 123456789101112131415# 允许跨域的中间件,get_resp是视图函数   def all">
 
 
 
@@ -556,10 +556,13 @@ window.onmouseout = function () {
       
 
       
-        <p>##一、同源政策（跨域资源共享）</p>
+        <p>一、同源政策（跨域资源共享）</p>
 <hr>
 <ul>
-<li><a href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html" target="_blank" rel="noopener">浏览器同源政策及其规避方法</a><strong>阮一峰</strong><br>#####1.1 含义<br>所谓同源就是指协议相同、域名相同、端口相同。<br>#####1.2 目的<br>为了保证用户信息学的安全，防止恶意的网站窃取数据。<br>#####1.3 CORS</li>
+<li><a href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html" target="_blank" rel="noopener">浏览器同源政策及其规避方法</a><strong>阮一峰</strong></li>
+</ul>
+<p>1.1 含义<br>所谓同源就是指协议相同、域名相同、端口相同。<br>1.2 目的<br>为了保证用户信息学的安全，防止恶意的网站窃取数据。<br>1.3 CORS</p>
+<ul>
 <li><a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="noopener">跨域资源共享CORS详解</a><strong>阮一峰</strong></li>
 <li>主要是绕开浏览器的同源策略</li>
 </ul>
@@ -569,14 +572,10 @@ window.onmouseout = function () {
 
 <p><strong>激活</strong>：在setting.py文件中的MIDDLEWARE加入：record.middlewares.allow_cross_origin_middleware</p>
 </li>
-<li><p>用专门跨域的第三方库</p>
-<p>a. 安装第三方库：pip install django-cors-headers；</p>
-<p>b. 在settings.py文件中的INSTALLED_APPS加入’corsheaders’（记得在后面加逗号）；</p>
-<p>c. 加中间件：在settings.py文件中的MIDDLEWARE加入’corsheaders.middleware.CorsMiddleware’（记得在后面加逗号）；</p>
-<p>d. 最后在settings.py文件中加上下面内容：</p>
+<li><p>用专门跨域的第三方库<br>a. 安装第三方库：pip install django-cors-headers；<br>b. 在settings.py文件中的INSTALLED_APPS加入’corsheaders’（记得在后面加逗号）；<br>c. 加中间件：在settings.py文件中的MIDDLEWARE加入’corsheaders.middleware.CorsMiddleware’（记得在后面加逗号）；<br>d. 最后在settings.py文件中加上下面内容：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 允许所有网站跨域获取数据</span></span><br><span class="line">CORS_ORIGIN_ALLOW_ALL = <span class="literal">True</span></span><br><span class="line"><span class="comment"># 配置跨域白名单</span></span><br><span class="line"><span class="comment"># CORS_ORIGIN_WHITELIST = ('www.abc.com', 'www.baidu.com')</span></span><br><span class="line"><span class="comment"># 是否允许发送Cookie给服务器</span></span><br><span class="line"><span class="comment"># CORS_ALLOW_CREDENTIALS = True</span></span><br><span class="line"><span class="comment"># 跨域请求支持哪些方法</span></span><br><span class="line"><span class="comment"># CORS_ALLOW_METHODS = ('GET', )</span></span><br></pre></td></tr></table></figure>
 
-<p>e. 允许跨域取数据。<br>##二、RESTful架构</p>
+<p>e. 允许跨域取数据。<br>二、RESTful架构</p>
 </li>
 </ol>
 <hr>
@@ -587,38 +586,28 @@ window.onmouseout = function () {
 <li>REST   —   软件即服务   —   SOA（面向服务的架构）   —   WebService   —   微服务</li>
 </ul>
 <ol>
-<li><p>REST（Representational State Transfer），表述性状态转移。</p>
-<p>URL（Universal Resource Locator）统一资源定位符/URI（Universal Resource Identifier）统一资源标识符</p>
-</li>
-<li><p>HTTP协议  –  请求行  -  GET / PIOST / PUT / PATCH / DELETR</p>
-</li>
-<li><p>当你对资源进行操作的时候资源的状态会发生转移</p>
-</li>
-<li><p>关键点</p>
-<blockquote>
+<li>REST（Representational State Transfer），表述性状态转移。<br>URL（Universal Resource Locator）统一资源定位符/URI（Universal Resource Identifier）统一资源标识符</li>
+<li>HTTP协议  –  请求行  -  GET / PIOST / PUT / PATCH / DELETR</li>
+<li>当你对资源进行操作的时候资源的状态会发生转移</li>
+<li>关键点<blockquote>
 <p>a. URL代表的是资源，要使用名词而不是动词<br>b. 你对资源要做的操作是通过HTTP协议请求行中的动词来说明的<br>c. 所有对资源的操作要做到无状态（两次请求之间不保留任何状态）</p>
 </blockquote>
 </li>
-<li><p>使用了REST风格的应用就称为RESTful风格/架构的应用。</p>
-</li>
+<li>使用了REST风格的应用就称为RESTful风格/架构的应用。<br>三、DRF（DjangoRestFramework）框架</li>
 </ol>
-<p>##三、DRF（DjangoRestFramework）框架</p>
 <hr>
 <ul>
 <li>可以很方便的做出REST风格的数据接口</li>
 </ul>
-<p>#####1.1 安装 </p>
+<p>1.1 安装 </p>
 <blockquote>
-<p>pip install djangorestframework</p>
-</blockquote>
-<p>#####1.2 第一种方式：使用ViewSet及其子类</p>
-<blockquote>
-<p>FBV   —   基于函数的视图 –  代码量大，完全自己定制，最灵活<br>CBV   —   基于类的视图  –  代码量更少，个别的地方欠缺灵活性</p>
-</blockquote>
+<p>pip install djangorestframework<br>1.2 第一种方式：使用ViewSet及其子类<br>FBV   —   基于函数的视图 –  代码量大，完全自己定制，最灵活<br>CBV   —   基于类的视图  –  代码量更少，个别的地方欠缺灵活性</p>
 <ol>
-<li><p>在视图函数中定义类（views.py）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ModelViewSet模型视图集合</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CarViewSet</span><span class="params">(ModelViewSet)</span>:</span></span><br><span class="line">	<span class="string">"""汽车视图集合"""</span></span><br><span class="line">	queryset = Car.objects.all()</span><br><span class="line">	<span class="comment"># serializer_class序列化器对应的类</span></span><br><span class="line">	serializer_class = CarSerializer</span><br><span class="line">	<span class="comment"># 如果不想分页就写下面这句</span></span><br><span class="line">	pagination_class = <span class="literal">None</span>    </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RecordViewSet</span><span class="params">(ModelViewSet)</span>:</span></span><br><span class="line">	<span class="string">"""违章记录视图集合"""</span></span><br><span class="line">	queryset = Record.objects.all().select_related(<span class="string">'car'</span>)</span><br><span class="line">	serializer_class = RecordSerializer</span><br><span class="line">	<span class="comment"># pagination_class = PageNumberPagination</span></span><br></pre></td></tr></table></figure>
+<li>在视图函数中定义类（views.py）<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ModelViewSet模型视图集合</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CarViewSet</span><span class="params">(ModelViewSet)</span>:</span></span><br><span class="line">	<span class="string">"""汽车视图集合"""</span></span><br><span class="line">	queryset = Car.objects.all()</span><br><span class="line">	<span class="comment"># serializer_class序列化器对应的类</span></span><br><span class="line">	serializer_class = CarSerializer</span><br><span class="line">	<span class="comment"># 如果不想分页就写下面这句</span></span><br><span class="line">	pagination_class = <span class="literal">None</span>    </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RecordViewSet</span><span class="params">(ModelViewSet)</span>:</span></span><br><span class="line">	<span class="string">"""违章记录视图集合"""</span></span><br><span class="line">	queryset = Record.objects.all().select_related(<span class="string">'car'</span>)</span><br><span class="line">	serializer_class = RecordSerializer</span><br><span class="line">	<span class="comment"># pagination_class = PageNumberPagination</span></span><br></pre></td></tr></table></figure>
 </li>
+</ol>
+</blockquote>
+<ol start="2">
 <li><p>创建一个专门放序列化器的模块serializers.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> rest_framework <span class="keyword">import</span> serializers</span><br><span class="line"><span class="keyword">from</span> record.models <span class="keyword">import</span> Car, Record</span><br><span class="line"><span class="comment"># ModelSerializer跟模型绑定的序列化器</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CarSerializer</span><span class="params">(serializers.ModelSerializer)</span>:</span></span><br><span class="line">    <span class="string">"""汽车序列化器"""</span></span><br><span class="line">    <span class="comment"># 绑定模型</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        model = Car</span><br><span class="line">        <span class="comment"># 所有字段全部都序列化</span></span><br><span class="line">        fields = <span class="string">'__all__'</span> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CarSimpleSerializer</span><span class="params">(serializers.ModelSerializer)</span>:</span></span><br><span class="line">	   <span class="string">"""汽车简单序列化器"""</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        model = Car</span><br><span class="line">        <span class="comment"># 把两个字段序列化</span></span><br><span class="line">        fields = (<span class="string">'carno'</span>, <span class="string">'owner'</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RecordSerializer</span><span class="params">(serializers.ModelSerializer)</span>:</span></span><br><span class="line">    <span class="string">"""违章记录序列化器"""</span></span><br><span class="line">    makedate = serializers.SerializerMethodField()</span><br><span class="line">    car = serializers.SerializerMethodField()</span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_makedate</span><span class="params">(record)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> record.makedate.strftime(<span class="string">'%Y-%m-%d %H:%M'</span>)    </span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_car</span><span class="params">(record)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> CarSimpleSerializer(record.car).data   </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        model = Record</span><br><span class="line">        fields = <span class="string">'__all__'</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -632,7 +621,7 @@ window.onmouseout = function () {
 
 </li>
 </ol>
-<p>#####1.3 自定义分页</p>
+<p>1.3 自定义分页</p>
 <ol>
 <li><p>创建一个新模块：utils.py</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> rest_framework.pagination <span class="keyword">import</span> PageNumberPagination</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomPagination</span><span class="params">(PageNumberPagination)</span>:</span></span><br><span class="line">   <span class="string">"""自定义分页"""</span></span><br><span class="line">   <span class="comment"># 用size来自定义决定一页显示多少条</span></span><br><span class="line">   page_size_query_param = <span class="string">'size'</span></span><br><span class="line">   <span class="comment"># 最多一页写的条数</span></span><br><span class="line">   max_page_size = <span class="number">50</span></span><br></pre></td></tr></table></figure>
@@ -642,7 +631,7 @@ window.onmouseout = function () {
 
 </li>
 </ol>
-<p>#####1.4 第二种方式：将数据接口做成单独的应用 +  通过APIView的子类定制数据接口</p>
+<p>1.4 第二种方式：将数据接口做成单独的应用 +  通过APIView的子类定制数据接口</p>
 <ul>
 <li>car只支持查询读取：让视图继承ReadOnlyModelViewSet</li>
 <li>允许查多个、新增，不能查询1个：ListAPIView, CreateAPIView, 如果希望三个父类的get方法都想用，就须重写get方法，</li>
@@ -669,10 +658,9 @@ window.onmouseout = function () {
 
 </li>
 </ol>
-<p>#####1.4 第三种方式：使用装饰器（FBV定制视图）（用地区表作为例子）</p>
+<p>1.4 第三种方式：使用装饰器（FBV定制视图）（用地区表作为例子）</p>
 <ul>
-<li><p>用第二种方式的写法：（查询全国所有省级行政区域）</p>
-<p>在在视图函数api/views.py中写入</p>
+<li><p>用第二种方式的写法：（查询全国所有省级行政区域）<br>在在视图函数api/views.py中写入</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DistrictView</span><span class="params">(ListAPIView)</span>:</span></span><br><span class="line">    queryset = District.objects.filter(parent__isnull=<span class="literal">True</span>)</span><br><span class="line">    serializer_class = DistrictSerializer</span><br><span class="line">    pagination_class = <span class="literal">None</span></span><br></pre></td></tr></table></figure>
 
 <p>在serializers.py模块中写入</p>
